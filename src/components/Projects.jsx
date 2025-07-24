@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Section.css';
 import ProjectModal from './ProjectModal';
 import { FaExternalLinkAlt, FaGithub, FaCode, FaMobile, FaGlobe, FaDatabase, FaRocket } from 'react-icons/fa';
+import expenseTrackerImg from '../assets/expense_tracker.png';
+import weatherProjectImg from '../assets/weatherproject.png';
 
 const Projects = () => {
   // State for managing the project modal (detailed view)
@@ -39,6 +41,28 @@ const Projects = () => {
       technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "NodeMailer"],
       github: "https://github.com/yourusername/surplus-smile", // Placeholder link
       live: "https://surplus-smile.vercel.app" // Placeholder link
+    },
+    {
+      id: 3,
+      title: "Expense Tracker",
+      description: "A web-based expense tracker that allows users to manage and categorize their expenses. Built using PHP and MySQL for persistent data storage.",
+      image: expenseTrackerImg, // Local image
+      category: "Web App",
+      icon: <FaGlobe />,
+      technologies: ["PHP", "MySQL"],
+      github: "https://github.com/yourusername/expense-tracker", // Placeholder link
+      live: "https://expense-tracker-demo.vercel.app" // Placeholder link
+    },
+    {
+      id: 4,
+      title: "Weather App",
+      description: "A simple weather application that displays current weather information using HTML, CSS, and JavaScript. Fetches data from a public weather API.",
+      image: weatherProjectImg, // Local image
+      category: "Web App",
+      icon: <FaGlobe />,
+      technologies: ["HTML", "CSS", "JavaScript"],
+      github: "https://github.com/yourusername/weather-app", // Placeholder link
+      live: "https://weather-app-demo.vercel.app" // Placeholder link
     }
   ];
 
