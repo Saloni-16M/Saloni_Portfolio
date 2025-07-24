@@ -1,0 +1,431 @@
+.portfolio-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+  background: rgba(10, 10, 30, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1.5px solid rgba(0,255,255,0.12);
+  box-shadow: 0 2px 24px rgba(0,255,255,0.08);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 2rem;
+}
+
+/* Add top padding to main content to prevent overlap */
+.portfolio-main {
+  padding-top: 80px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 8px 12px;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-logo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.nav-logo:hover::before {
+  left: 100%;
+}
+
+.nav-logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 255, 255, 0.2);
+}
+
+.logo-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.nav-logo:hover .logo-image {
+  border-color: var(--accent-magenta);
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.6);
+  transform: scale(1.1);
+}
+
+.logo-text {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.nav-logo:hover .logo-text {
+  color: var(--accent-magenta);
+  text-shadow: 0 0 20px rgba(255, 0, 255, 0.7);
+  transform: scale(1.05);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  padding: 10px;
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-menu li {
+  padding: 14px 22px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+  position: relative;
+  overflow: hidden;
+  color: var(--text-secondary);
+  border-radius: 20px;
+  margin: 0 2px;
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.nav-menu li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+  border-radius: 20px;
+  opacity: 0;
+  transition: all 0.4s ease;
+  transform: scale(0.8);
+}
+
+.nav-menu li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-magenta));
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+  border-radius: 1px;
+}
+
+.nav-menu li:hover::before,
+.nav-menu li.active::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nav-menu li:hover::after,
+.nav-menu li.active::after {
+  width: 70%;
+}
+
+.nav-menu li.active {
+  color: var(--accent-cyan);
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+.nav-menu li:hover {
+  color: var(--accent-cyan);
+  transform: translateY(-1px);
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+.nav-menu li span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  position: relative;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background: #00FFFF;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger-menu:hover .hamburger-line {
+  background: #FF00FF;
+  box-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background: rgba(10, 10, 30, 0.95);
+  backdrop-filter: blur(20px);
+  border-left: 2px solid #00FFFF;
+  box-shadow: -5px 0 30px rgba(0, 255, 255, 0.2);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 80px 20px 20px;
+  gap: 0;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  display: none;
+}
+
+.mobile-menu-open {
+  right: 0;
+  display: flex !important;
+}
+
+.mobile-menu li {
+  width: 100%;
+  margin: 0;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  text-align: left;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  color: #FFFFFF;
+}
+
+.mobile-menu li:hover {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: #00FFFF;
+  transform: translateX(5px);
+}
+
+.mobile-menu li.active {
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(255, 0, 255, 0.2));
+  border-color: #00FFFF;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 15px;
+    height: 75px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-logo {
+    gap: 10px;
+    padding: 6px 10px;
+  }
+  
+  .logo-image {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .logo-text {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+  
+  /* Show hamburger menu on mobile */
+  .hamburger-menu {
+    display: flex !important;
+  }
+  
+  /* Hide regular menu on mobile */
+  .nav-menu:not(.mobile-menu) {
+    display: none !important;
+  }
+  
+  /* Show mobile menu when open */
+  .mobile-menu {
+    display: none;
+  }
+  
+  .mobile-menu.mobile-menu-open {
+    display: flex !important;
+  }
+  
+  .portfolio-main {
+    padding-top: 75px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-container {
+    padding: 0 10px;
+    height: 70px;
+    justify-content: space-between;
+  }
+  
+  .nav-logo {
+    gap: 8px;
+    padding: 4px 8px;
+  }
+  
+  .logo-image {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .logo-text {
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .hamburger-menu {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .hamburger-line {
+    height: 2.5px;
+  }
+  
+  .mobile-menu {
+    width: 260px;
+  }
+  
+  .mobile-menu li {
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+  
+  .portfolio-main {
+    padding-top: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 8px;
+    height: 65px;
+    justify-content: space-between;
+  }
+  
+  .nav-logo {
+    gap: 6px;
+    padding: 3px 6px;
+  }
+  
+  .logo-image {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .logo-text {
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+  }
+  
+  .hamburger-menu {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .hamburger-line {
+    height: 2px;
+  }
+  
+  .mobile-menu {
+    width: 240px;
+    padding: 70px 15px 15px;
+  }
+  
+  .mobile-menu li {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+  
+  .portfolio-main {
+    padding-top: 65px;
+  }
+} 
