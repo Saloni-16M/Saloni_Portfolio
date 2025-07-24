@@ -22,14 +22,14 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Real-Time News & Notes Platform",
+      title: "DailySync",
       description: "Developed a full-stack platform to display real-time news from external APIs. Integrated JWT-based authentication to secure user sessions. Enabled authenticated users to create, update, and persistently store personal notes.",
       image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500&h=300&fit=crop", // Placeholder image
       category: "Full Stack",
       icon: <FaGlobe />,
       technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT Authentication"],
-      github: "https://github.com/yourusername/news-notes-platform", // Placeholder link
-      live: "https://news-notes-platform.vercel.app" // Placeholder link
+      github: "https://github.com/Saloni-16M/dailysync_project/tree/main", // Placeholder link
+      live: "https://dailysync-project-edje.vercel.app/" // Placeholder link
     },
     {
       id: 2,
