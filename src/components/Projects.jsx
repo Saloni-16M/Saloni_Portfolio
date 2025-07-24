@@ -6,6 +6,7 @@ import expenseTrackerImg from '../assets/expense_tracker.png';
 import todoImg from '../assets/todo.png';
 import dailysyncImg from '../assets/dailysync.png';
 import stonePaperScissorImg from '../assets/stonepaperscissor.png';
+import surplusSmileImg from '../assets/surplussmile.png';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -27,11 +28,11 @@ const Projects = () => {
       id: 2,
       title: "Surplus Smile",
       description: "Developed a donation platform to connect resorts with NGOs for surplus food distribution. Built user-friendly dashboards for food listing, tracking, and claiming. Integrated NodeMailer to automatically alert NGOs when new donations become available.",
-      image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=500&h=300&fit=crop",
+      image: surplusSmileImg,
       category: "Full Stack",
       icon: <FaGlobe />,
       technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "NodeMailer"],
-      github: "https://github.com/yourusername/surplus-smile",
+      github: "https://github.com/Saloni-16M/MinorProject",
       live: "https://surplus-smile.vercel.app"
     },
     {
