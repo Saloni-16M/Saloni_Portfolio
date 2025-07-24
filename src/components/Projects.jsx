@@ -6,7 +6,7 @@ import expenseTrackerImg from '../assets/expense_tracker.png';
 import todoImg from '../assets/todo.png';
 import dailysyncImg from '../assets/dailysync.png';
 import stonePaperScissorImg from '../assets/stonepaperscissor.png';
-import surplusSmileImg from '../assets/surplussmile.png';
+import surplusSmileImg from '../assets/surplusSmile.png';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
