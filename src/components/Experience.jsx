@@ -6,7 +6,7 @@ import { SiMongodb, SiExpress } from 'react-icons/si';
 function Experience() {
   const experiences = [
     {
-      title: "Full-Stack Developer",
+      title: "Frontend Developer",
       company: "College Project",
       period: "2024 - Present",
       description: "Currently working on an Inventory Management System for the college",
@@ -18,10 +18,7 @@ function Experience() {
       ],
       technologies: [
         { name: "React", icon: FaReact },
-        { name: "Node.js", icon: FaNodeJs },
-        { name: "MongoDB", icon: SiMongodb },
-        { name: "Express", icon: SiExpress },
-        { name: "JavaScript", icon: FaJs }
+        { name: "JavaScript", icon: FaJs },
       ],
       icon: FaLaptopCode
     },
