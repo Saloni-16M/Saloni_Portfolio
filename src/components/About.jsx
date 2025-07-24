@@ -44,10 +44,7 @@ function About() {
               <span className="highlight-icon">🌐</span>
               <span>Full-Stack Development</span>
             </div>
-            <div className="highlight-item">
-              <span className="highlight-icon">🔌</span>
-              <span>IoT & Hardware</span>
-            </div>
+            
             <div className="highlight-item">
               <span className="highlight-icon">🎯</span>
               <span>Problem Solving</span>

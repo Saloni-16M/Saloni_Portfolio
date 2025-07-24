@@ -3,7 +3,7 @@ import './Section.css';
 import ProjectModal from './ProjectModal';
 import { FaExternalLinkAlt, FaGithub, FaGlobe } from 'react-icons/fa';
 import expenseTrackerImg from '../assets/expense_tracker.png';
-import weatherProjectImg from '../assets/weatherproject.png';
+import todoImg from '../assets/todo.png';
 import dailysyncImg from '../assets/dailysync.png';
 import stonePaperScissorImg from '../assets/stonepaperscissor.png';
 
@@ -42,19 +42,19 @@ const Projects = () => {
       category: "Web App",
       icon: <FaGlobe />,
       technologies: ["PHP", "MySQL"],
-      github: "https://github.com/yourusername/expense-tracker",
+      github: "https://github.com/Saloni-16M/Expense-Tracker",
       live: "https://expense-tracker-demo.vercel.app"
     },
     {
       id: 4,
-      title: "Weather App",
-      description: "A simple weather application that displays current weather information using HTML, CSS, and JavaScript. Fetches data from a public weather API.",
-      image: weatherProjectImg,
+      title: "ToDo App",
+      description: "A simple Todo application that displays current weather information using HTML, CSS, and JavaScript. Fetches data from a public weather API.",
+      image: todoImg,
       category: "Web App",
       icon: <FaGlobe />,
-      technologies: ["HTML", "CSS", "JavaScript"],
-      github: "https://github.com/yourusername/weather-app",
-      live: "https://weather-app-demo.vercel.app"
+      technologies: ["HTML", "CSS", "JavaScript","React"],
+      github: "https://github.com/Saloni-16M/todo",
+      live: "https://todo-three-gamma-24.vercel.app/"
     },
     {
       id: 5,

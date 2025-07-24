@@ -33,7 +33,7 @@ function Skills() {
       skills: [
         { name: "MongoDB", icon: SiMongodb, level: 80 },
         { name: "MySQL", logo: mysqlLogo, level: 75 },
-        { name: "SQLite", icon: FaDatabase, level: 70 }
+        
       ]
     },
     {
