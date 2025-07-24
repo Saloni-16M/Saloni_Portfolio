@@ -33,7 +33,7 @@ const Projects = () => {
       icon: <FaGlobe />,
       technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "NodeMailer"],
       github: "https://github.com/Saloni-16M/MinorProject",
-      live: "https://surplus-smile.vercel.app"
+      live: "https://surplus-smile-ypbg.vercel.app/"
     },
     {
       id: 3,
